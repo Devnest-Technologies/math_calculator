@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/dark-mode";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -31,11 +32,11 @@ export default function RootLayout({
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="dark"
+                    defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
+                    {children} <Analytics />
                     <ModeToggle />
                 </ThemeProvider>
             </body>
