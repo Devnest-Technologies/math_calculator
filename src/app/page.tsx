@@ -20,7 +20,6 @@ const Home = () => {
     return (
         <div>
             <Head>
-                {/* Google tag (gtag.js) */}
                 <script
                     async
                     src="https://www.googletagmanager.com/gtag/js?id=G-EVGW2WPZ0Z"
@@ -28,11 +27,11 @@ const Home = () => {
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'G-EVGW2WPZ0Z');
-                        `,
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-EVGW2WPZ0Z');
+                    `,
                     }}
                 />
             </Head>
