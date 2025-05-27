@@ -4,16 +4,17 @@ frontend:
         preBuild:
             commands:
                 - curl -fsSL https://get.pnpm.io/install.sh | sh -
-                - export PATH="~/.pnpm:$PATH"
+                - export PNPM_HOME="/root/.local/share/pnpm"
+                - export PATH="$PNPM_HOME:$PATH"
                 - pnpm install --frozen-lockfile
         build:
             commands:
                 - pnpm build
     artifacts:
-        baseDirectory: dist # Replace with your build output directory
+        baseDirectory: .next # Changed from 'dist' to '.next' for Next.js
         files:
             - "**/*"
     cache:
         paths:
             - node_modules/**/*
-            - .pnpm-store/**/* # Optional: Cache pnpm store for faster builds
+            - .pnpm-store/**/*
